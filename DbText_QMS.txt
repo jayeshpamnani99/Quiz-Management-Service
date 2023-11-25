@@ -1,0 +1,16 @@
+CREATE TABLE `languagelift`.`submission_status` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(15) NOT NULL,
+  PRIMARY KEY (`id`))
+  
+  
+CREATE TABLE `languagelift`.`quiz_submission` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `moduleId` INT NOT NULL,
+  `courseId` INT NOT NULL,
+  `studentId` INT NOT NULL,
+  `submissionText` VARCHAR(45) NULL,
+  `submissionStatusId` INT NOT NULL,
+  `marksObtained` INT NOT NULL,
+  `totalMarks` INT NOT NULL,
+  PRIMARY KEY (`id`));
