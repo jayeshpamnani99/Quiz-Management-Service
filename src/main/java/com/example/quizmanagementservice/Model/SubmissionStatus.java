@@ -28,4 +28,12 @@ public class SubmissionStatus
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "SubmissionStatus{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

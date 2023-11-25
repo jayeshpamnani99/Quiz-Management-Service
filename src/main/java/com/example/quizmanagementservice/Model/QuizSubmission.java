@@ -19,6 +19,10 @@ public class QuizSubmission
     private String submissionText;
     private Integer marksObtained;
     private Integer totalMarks;
+
+    @Transient
+    private SubmissionStatus submissionStatus;
+
     public Integer getId() {
         return id;
     }
@@ -82,5 +86,28 @@ public class QuizSubmission
 
     public void setTotalMarks(Integer totalMarks) {
         this.totalMarks = totalMarks;
+    }
+
+    public SubmissionStatus getSubmissionStatus() {
+        return submissionStatus;
+    }
+
+    public void setSubmissionStatus(SubmissionStatus submissionStatus) {
+        this.submissionStatus = submissionStatus;
+    }
+
+    @Override
+    public String toString() {
+        return "QuizSubmission{" +
+                "id=" + id +
+                ", moduleId=" + moduleId +
+                ", courseId=" + courseId +
+                ", studentId=" + studentId +
+                ", submissionStatusId=" + submissionStatusId +
+                ", submissionText='" + submissionText + '\'' +
+                ", marksObtained=" + marksObtained +
+                ", totalMarks=" + totalMarks +
+                ", submissionStatus=" + submissionStatus +
+                '}';
     }
 }
