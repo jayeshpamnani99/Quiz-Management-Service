@@ -2,6 +2,9 @@ package com.example.quizmanagementservice.Model;
 
 import jakarta.persistence.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Entity
 @Table(name="quiz_submission")
 public class QuizSubmission
@@ -19,6 +22,9 @@ public class QuizSubmission
     private String submissionText;
     private Integer marksObtained;
     private Integer totalMarks;
+
+    @Transient
+    private HashMap userDetails;
 
     @Transient
     private SubmissionStatus submissionStatus;
@@ -96,6 +102,14 @@ public class QuizSubmission
         this.submissionStatus = submissionStatus;
     }
 
+    public Map getUserDetails() {
+        return userDetails;
+    }
+
+    public void setUserDetails(Map userDetails) {
+        this.userDetails = new HashMap(userDetails);
+    }
+
     @Override
     public String toString() {
         return "QuizSubmission{" +
@@ -107,6 +121,7 @@ public class QuizSubmission
                 ", submissionText='" + submissionText + '\'' +
                 ", marksObtained=" + marksObtained +
                 ", totalMarks=" + totalMarks +
+                ", userDetails=" + userDetails +
                 ", submissionStatus=" + submissionStatus +
                 '}';
     }
