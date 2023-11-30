@@ -52,18 +52,18 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    14.3%
+    50%
   </span>
   <span class="absValue">
-    (1/7)
+    (3/6)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    6.1%
+    61.3%
   </span>
   <span class="absValue">
-    (2/33)
+    (19/31)
   </span>
 </td>
 </tr>
@@ -102,25 +102,21 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    @Autowired
 &nbsp;    private QuizService quizService;
 &nbsp;
-&nbsp;    @GetMapping(&quot;/&quot;)
-&nbsp;    public String message(){
-<b class="nc">&nbsp;        logger.info(&quot;getting forst log&quot;);</b>
-<b class="nc">&nbsp;        return &quot;Hello World!&quot;;</b>
-&nbsp;    }
+&nbsp;
 &nbsp;
 &nbsp;    @RequestMapping(value = &quot;submitQuiz&quot;, method = RequestMethod.POST)
 &nbsp;    public ResponseEntity&lt;Object&gt; submitQuiz(@RequestHeader(HttpHeaders.AUTHORIZATION) String authToken,
 &nbsp;                                         @RequestBody QuizSubmission submissionData) throws Exception {
-<b class="nc">&nbsp;        logger.info(&quot;submitting quiz&quot;);</b>
-<b class="nc">&nbsp;        logger.info(&quot;{}&quot;,submissionData);</b>
-<b class="nc">&nbsp;        int id = quizService.submitQuiz(authToken,submissionData);</b>
-<b class="nc">&nbsp;        JSONObject obj = new JSONObject();</b>
-<b class="nc">&nbsp;        obj.put(&quot;id&quot;,id);</b>
-<b class="nc">&nbsp;        obj.put(&quot;message&quot;,&quot;quiz submitted successfully!&quot;);</b>
-<b class="nc">&nbsp;        logger.info(&quot;obj from submit quiz : {}&quot;,obj);</b>
-<b class="nc">&nbsp;        return ResponseEntity</b>
-<b class="nc">&nbsp;                .status(HttpStatus.OK)</b>
-<b class="nc">&nbsp;                .body(obj.toMap());</b>
+<b class="fc">&nbsp;        logger.info(&quot;submitting quiz&quot;);</b>
+<b class="fc">&nbsp;        logger.info(&quot;{}&quot;,submissionData);</b>
+<b class="fc">&nbsp;        int id = quizService.submitQuiz(authToken,submissionData);</b>
+<b class="fc">&nbsp;        JSONObject obj = new JSONObject();</b>
+<b class="fc">&nbsp;        obj.put(&quot;id&quot;,id);</b>
+<b class="fc">&nbsp;        obj.put(&quot;message&quot;,&quot;quiz submitted successfully!&quot;);</b>
+<b class="fc">&nbsp;        logger.info(&quot;obj from submit quiz : {}&quot;,obj);</b>
+<b class="fc">&nbsp;        return ResponseEntity</b>
+<b class="fc">&nbsp;                .status(HttpStatus.OK)</b>
+<b class="fc">&nbsp;                .body(obj.toMap());</b>
 &nbsp;    }
 &nbsp;
 &nbsp;    @GetMapping(&quot;/isQuizSubmissionPossible&quot;)
@@ -161,13 +157,13 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;
 &nbsp;    @ExceptionHandler(CustomException.class)
 &nbsp;    public ResponseEntity&lt;Object&gt; handleException(CustomException exception) {
-<b class="nc">&nbsp;        logger.info(&quot;inside exception handler: {}&quot;,exception);</b>
-<b class="nc">&nbsp;        JSONObject obj = new JSONObject();</b>
-<b class="nc">&nbsp;        obj.put(&quot;status&quot;,exception.getStatus());</b>
-<b class="nc">&nbsp;        obj.put(&quot;message&quot;,exception.getE().getMessage());</b>
-<b class="nc">&nbsp;        return ResponseEntity</b>
-<b class="nc">&nbsp;                .status(exception.getStatus())</b>
-<b class="nc">&nbsp;                .body(obj.toMap());</b>
+<b class="fc">&nbsp;        logger.info(&quot;inside exception handler: {}&quot;,exception);</b>
+<b class="fc">&nbsp;        JSONObject obj = new JSONObject();</b>
+<b class="fc">&nbsp;        obj.put(&quot;status&quot;,exception.getStatus());</b>
+<b class="fc">&nbsp;        obj.put(&quot;message&quot;,exception.getE().getMessage());</b>
+<b class="fc">&nbsp;        return ResponseEntity</b>
+<b class="fc">&nbsp;                .status(exception.getStatus())</b>
+<b class="fc">&nbsp;                .body(obj.toMap());</b>
 &nbsp;    }
 &nbsp;}
 </code>
@@ -193,7 +189,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2023-11-28 18:54</div>
+    <div style="float:right;">generated on 2023-11-30 14:26</div>
 </div>
 </body>
 </html>
