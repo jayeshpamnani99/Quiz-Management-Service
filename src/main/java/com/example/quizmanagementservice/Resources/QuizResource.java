@@ -25,11 +25,7 @@ public class QuizResource {
     @Autowired
     private QuizService quizService;
 
-    @GetMapping("/")
-    public String message(){
-        logger.info("getting forst log");
-        return "Hello World!";
-    }
+
 
     @RequestMapping(value = "submitQuiz", method = RequestMethod.POST)
     public ResponseEntity<Object> submitQuiz(@RequestHeader(HttpHeaders.AUTHORIZATION) String authToken,
